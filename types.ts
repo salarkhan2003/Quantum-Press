@@ -7,7 +7,10 @@ export enum CategorySlug {
   RAIL = 'rail-tech',
   AEROSPACE = 'aerospace',
   ENGINEERING = 'engineering',
-  SPACE_QUANTUM = 'space-quantum'
+  SPACE_QUANTUM = 'space-quantum',
+  LIFE_SCIENCES = 'life-sciences',
+  MARKETS_POLICY = 'markets-policy',
+  CULTURE_SPORTS = 'culture-sports'
 }
 
 export type ContentBlock = 
