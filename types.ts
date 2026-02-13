@@ -10,6 +10,12 @@ export enum CategorySlug {
   SPACE_QUANTUM = 'space-quantum'
 }
 
+export type ContentBlock = 
+  | { type: 'text'; content: string }
+  | { type: 'image'; url: string; caption?: string; fullWidth?: boolean }
+  | { type: 'video'; provider: 'youtube' | 'vimeo' | 'html5'; id: string; caption?: string }
+  | { type: 'code'; language: string; code: string; title?: string };
+
 export interface Category {
   id: string;
   name: string;
@@ -30,7 +36,8 @@ export interface Article {
   slug: string;
   title: string;
   summary: string;
-  content: string;
+  content: string; // Legacy support
+  contentBlocks?: ContentBlock[]; // New structured content
   category: CategorySlug;
   authorId: string;
   date: string;
